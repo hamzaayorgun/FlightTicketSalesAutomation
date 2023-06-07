@@ -12,7 +12,7 @@
     [![image](https://www.linkpicture.com/q/satisdetay.png)](https://www.linkpicture.com/view.php?img=LPic6480b98f856b6930858297)
     
 * Bilet İptal
-  * Bu alanda satılan bilet iptali gerçekleştirilir.
+  * Bu alanda satılan bilet iptali gerçekleştirilir. <br/> <br/>
   [![image](https://www.linkpicture.com/q/biletiptal.png)](https://www.linkpicture.com/view.php?img=LPic6480bb90e1919235791908)
 * Kişi Arama
   * Bu alanda satılan biletin detayları gösterilir. <br/> <br/>
