@@ -38,7 +38,7 @@ int oku(){
 	anamenu();
 }
 
-//Musteri yapisi tanýmlama
+//Musteri yapisi tanÄ±mlama
 typedef struct musteriler{
 	char ad[50];
 	char soyad[50];
@@ -46,7 +46,7 @@ typedef struct musteriler{
 	int koltukNumarasi;
 }musteri;
 
-//Ana menü iþlem seçimi
+//Ana menÃ¼ iÅŸlem seÃ§imi
 int anamenu(){
 	fflush(stdin);
 	system("cls");	
@@ -54,7 +54,7 @@ int anamenu(){
 	int islemNumarasi; 
 	printf("\n\n1-Ucak Durumunu Goster\n2-Bilet Satisi\n3-Bilet Iptal\n4-Kisi Arama\n5-Cikis\n\n");
 	printf("Yapmak istediginiz islemi seciniz:"); 
-	scanf("%d" , &islemNumarasi); // Ekranda görünen iþlem seçimi
+	scanf("%d" , &islemNumarasi); // Ekranda gÃ¶rÃ¼nen iÅŸlem seÃ§imi
 	switch(islemNumarasi){
 		case 1: durum();
 				break;
@@ -72,13 +72,13 @@ int anamenu(){
 	}
 }
 
-//Uçak Koltuk Durumu
+//UÃ§ak Koltuk Durumu
 int durum(){
 	fflush(stdin);
 	
 	system("cls");
 	printf("		Yorgun Hava Yollari\n\n");
-	FILE*fp; // Seferlerin gösterilmesi >>
+	FILE*fp; // Seferlerin gÃ¶sterilmesi >>
 	fp = fopen("dosyalar\\Hatlar.txt", "r");
 	if(fp == NULL){
 		printf("dosya acmada hata oldu.");
@@ -97,13 +97,13 @@ int durum(){
 	
 	printf("Ana Menuye Donmek icin 0'a basiniz");
 	printf("\nGormek istediginiz seferi giriniz:");
-	scanf("%d", &seferNo); // Görmek istenilen sefer seçimi
+	scanf("%d", &seferNo); // GÃ¶rmek istenilen sefer seÃ§imi
 	
-	if(seferNo == 0){ // 0 ise ana menüye dön
+	if(seferNo == 0){ // 0 ise ana menÃ¼ye dÃ¶n
 		main();
 	}
 	
-	while(seferNo<1 || seferNo>10){ // seferNo 1den küçük veya 10'dan büyük ise tekrar iste
+	while(seferNo<1 || seferNo>10){ // seferNo 1den kÃ¼Ã§Ã¼k veya 10'dan bÃ¼yÃ¼k ise tekrar iste
 	fflush(stdin);
 	printf("HATALI GIRIS!");
 	printf("\nGormek istediginiz seferi giriniz:");
@@ -163,9 +163,9 @@ int satis(){
 	int hatSecim;
 	printf("Ana Menuye Donmek icin 0'a basiniz.\n");
 	printf("Ucusunuz ic hatlar ise 1, dis hatlar ise 2'ye basiniz:");
-	scanf("%d" , &hatSecim); // Hat secimi veya ana menüye dönüþ için secim
+	scanf("%d" , &hatSecim); // Hat secimi veya ana menÃ¼ye dÃ¶nÃ¼ÅŸ iÃ§in secim
 	switch(hatSecim){
-		case 0: main(); // 0 ise ana menüye den
+		case 0: main(); // 0 ise ana menÃ¼ye den
 				break;
 		case 1: break; // 1 ise devam et
 		case 2: break; // 2 ise devam et 
@@ -177,7 +177,7 @@ int satis(){
 	printf("\tNereden");
 	printf(" - Nereye\n\n");
 	FILE*fHat; 
-	fHat = fopen("dosyalar\\Hatlar.txt", "r"); // Hatlar dosyasini açýyoruz.
+	fHat = fopen("dosyalar\\Hatlar.txt", "r"); // Hatlar dosyasini aÃ§Ä±yoruz.
 	if(fHat == NULL){
 		printf("dosya acmada hata oldu.");
 		exit(1);
@@ -187,8 +187,8 @@ int satis(){
 	int seferNo, hatNo; 
 	char Nereden[100], cizgi, Nereye[100];
 	while(! feof(fHat)){ 
-		fscanf(fHat, " %d %d %s %s ", &seferNo, &hatNo, Nereden, Nereye); // ÝÇ VEYA DIÞ HATA GÖRE EKRANA UÇUÞLAR GELÝR.
-		if(hatNo == hatSecim){ // Seçilen hat eþit ise hatNo'ya göster.
+		fscanf(fHat, " %d %d %s %s ", &seferNo, &hatNo, Nereden, Nereye); // Ä°Ã‡ VEYA DIÅž HATA GÃ–RE EKRANA UÃ‡UÅžLAR GELÄ°R.
+		if(hatNo == hatSecim){ // SeÃ§ilen hat eÅŸit ise hatNo'ya gÃ¶ster.
 		printf("%d\t%s - %s\n", seferNo, Nereden, Nereye);
 		}          
 	} 
@@ -197,8 +197,8 @@ int satis(){
 	
 	int ucusSecim; 
 	printf("\n\nUcus Seciniz:");
-	scanf("%d" , &ucusSecim); /// UCUS SECÝMÝ
- 	if(hatSecim==1){   //EÐER ÝÇ HAT SEÇÝLÝ ÝSE 1'DEN KÜÇÜK VE 5'DEN BÜYÜK OLAMAZ
+	scanf("%d" , &ucusSecim); /// UCUS SECÄ°MÄ°
+ 	if(hatSecim==1){   //EÄžER Ä°Ã‡ HAT SEÃ‡Ä°LÄ° Ä°SE 1'DEN KÃœÃ‡ÃœK VE 5'DEN BÃœYÃœK OLAMAZ
  		while(ucusSecim<1 || ucusSecim>5){
  			printf("\nHATALI GIRIS!");
 			printf("\n\nUcus Seciniz:");
@@ -207,7 +207,7 @@ int satis(){
 		 }
 	 }
  	
- 	else if(hatSecim==2){ // EÐER DIÞ HAT SEÇÝLÝ ÝSE 6'DAN KÜÇÜK VE 10'DAN BÜYÜK OLAMAZ.
+ 	else if(hatSecim==2){ // EÄžER DIÅž HAT SEÃ‡Ä°LÄ° Ä°SE 6'DAN KÃœÃ‡ÃœK VE 10'DAN BÃœYÃœK OLAMAZ.
  		while(ucusSecim<6 || ucusSecim>10){
  			printf("\nHATALI GIRIS!");
 			printf("\n\nUcus Seciniz:");
@@ -217,7 +217,7 @@ int satis(){
 	 }
  	
  	
-	FILE*fSefer; // SEÇÝLEN SEFERÝ GÖSTERMEK ÝCÝN DOSYA AÇILIR
+	FILE*fSefer; // SEÃ‡Ä°LEN SEFERÄ° GÃ–STERMEK Ä°CÄ°N DOSYA AÃ‡ILIR
 	fSefer = fopen("dosyalar\\Hatlar.txt", "r");
 	if(fSefer == NULL){
 		printf("dosya acmada hata oldu.");
@@ -237,9 +237,9 @@ int satis(){
 	
 	}
 	
-	fclose(fSefer); // SEÇÝLEN SEFERÝ GÖSTERMEK ÝÇÝN DOSYA KAPANIR.
+	fclose(fSefer); // SEÃ‡Ä°LEN SEFERÄ° GÃ–STERMEK Ä°Ã‡Ä°N DOSYA KAPANIR.
 	
-	printf("Ucak Durumu:\n\n"); // Seçilen seferin uçak durumu;
+	printf("Ucak Durumu:\n\n"); // SeÃ§ilen seferin uÃ§ak durumu;
 	
 	int j , k , sayac=1;
 	for(j=0; j<sira; j++){
@@ -259,9 +259,9 @@ int satis(){
 	}
 	//
 	
-	fflush(stdin); // INTEGER BÝR SAYIDAN SONRA STRING ALINAMADIÐI ÝÇÝN ENTER TEMÝZLENÝR.
+	fflush(stdin); // INTEGER BÄ°R SAYIDAN SONRA STRING ALINAMADIÄžI Ä°Ã‡Ä°N ENTER TEMÄ°ZLENÄ°R.
 	
-	musteri o;  // YAPIYI OLUÞTURMUÞTUK O ADINDA BÝR DEGÝSKEN TANIMLADIK.
+	musteri o;  // YAPIYI OLUÅžTURMUÅžTUK O ADINDA BÄ°R DEGÄ°SKEN TANIMLADIK.
  	
 	printf("\nAdinizi Giriniz:"); 
 	gets(o.ad); // AD ALINIR.
@@ -277,7 +277,7 @@ int satis(){
 		
 	
 	int sayi=1;
-	while(sayi != 0){ // SAYI 0'DAN FARKLI OLDUÐU SÜRECE DÖN 1 OLUNCA DÖNGÜDEN ÇIKAR.
+	while(sayi != 0){ // SAYI 0'DAN FARKLI OLDUÄžU SÃœRECE DÃ–N 1 OLUNCA DÃ–NGÃœDEN Ã‡IKAR.
 		int sayac=1;
 		
 		printf("\nKoltuk Numarasi Giriniz:");
@@ -289,7 +289,7 @@ int satis(){
 			scanf("%d" , &o.koltukNumarasi);
 		 }
 		
-		int j , k ; // sayac 1'den baþlýyor çünkü koltuk numarasi 1'den baþlýyor.
+		int j , k ; // sayac 1'den baÅŸlÄ±yor Ã§Ã¼nkÃ¼ koltuk numarasi 1'den baÅŸlÄ±yor.
 		for(j=0; j<sira; j++){
 			for(k=0; k<koltuk; k++){
 				
@@ -324,7 +324,7 @@ int satis(){
 	}
 	
 	
-	FILE *fp; // Secilen uçaðýn koltuk durumu;
+	FILE *fp; // Secilen uÃ§aÄŸÄ±n koltuk durumu;
 	char dosya[20];
 	char num[2];
 	int i;
@@ -426,7 +426,7 @@ int arama(){
 				printf("Ucus dis hatlardadir.");
 			}
 			
-			FILE*fSefer; // SEÇÝLEN SEFERÝ GÖSTERMEK ÝCÝN DOSYA AÇILIR
+			FILE*fSefer; // SEÃ‡Ä°LEN SEFERÄ° GÃ–STERMEK Ä°CÄ°N DOSYA AÃ‡ILIR
 			fSefer = fopen("dosyalar\\Hatlar.txt", "r");
 			if(fSefer == NULL){
 				printf("dosya acmada hata oldu.");
@@ -443,7 +443,7 @@ int arama(){
 				
 		
 			}
-			fclose(fSefer); // SEÇÝLEN SEFERÝ GÖSTERMEK ÝÇÝN DOSYA KAPANIR.
+			fclose(fSefer); // SEÃ‡Ä°LEN SEFERÄ° GÃ–STERMEK Ä°Ã‡Ä°N DOSYA KAPANIR.
 			o.tc = 0;
 			sayac++;
 		   	
@@ -531,8 +531,8 @@ int iptal(){
 				}
 			}
 			
-			// Koltuk Durumu Güncelleme
-			FILE *fSil; // Secilen uçaðýn koltuk durumu;
+			// Koltuk Durumu GÃ¼ncelleme
+			FILE *fSil; // Secilen uÃ§aÄŸÄ±n koltuk durumu;
 			char dosya[20];
 			char num[2];
 			
@@ -548,7 +548,7 @@ int iptal(){
 			strcat(dosya, num);
 			strcat(dosya, ".txt");
 		
-			printf("%s\n" , dosya);
+			
 		
 		
 			fSil = fopen(dosya, "w");
@@ -570,7 +570,7 @@ int iptal(){
 	  
 			}
 			
-			fclose(fSil); // Koltuk Durumu Güncelleme Bitis;
+			fclose(fSil); // Koltuk Durumu GÃ¼ncelleme Bitis;
 			
 			
 			
